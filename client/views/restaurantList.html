@@ -1,0 +1,29 @@
+<template name="restaurantList">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Restaurants</h3>
+    </div>
+    <div class="panel-body" id="restaurant-list">
+      {{#each restaurants}}
+      <div class="list-group">
+        <div class="list-group-item">
+          <div class="row-action-primary checkbox">
+            <label><input class="restaurant-selected" type="checkbox" value="{{_id}}"></label>
+          </div>
+          <div class="row-content">
+            <h4 class="list-group-item-heading">{{name}}</h4>
+            <p class="text-muted">{{description}}</p>
+            {{#if menu}}
+            <a href="{{menu}}"><span class="label label-primary">Menu</span></a>
+            {{/if}}
+            {{#if website}}
+            <a href="{{website}}"><span class="label label-info">Website</span></a>
+            {{/if}}
+          </div>
+        </div>
+        <div class="list-group-separator"></div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
