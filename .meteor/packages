@@ -10,3 +10,5 @@ fezvrasta:bootstrap-material-design
 accounts-google
 less
 service-configuration
+dburles:collection-helpers
+reywood:publish-composite

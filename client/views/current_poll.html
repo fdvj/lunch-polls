@@ -1,10 +1,37 @@
 <template name = "currentPoll">
   <div class="row">
     <div class="col-md-7">
-      <h2>Current Vote</h2>
-      {{#each currentPoll}}
-
-      {{/each}}
+      {{#if currentPoll}}
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Current Vote</h3>
+        </div>
+        <div class="panel-body" id="votes-list">
+          {{#each restaurants}}
+          {{#if anyVotes}}
+          <div class="list-group vote">
+            <div class="list-group-item">
+              <div class="row">
+                <div class="col-md-2">
+                  <span class="btn btn-primary btn-fab btn-raised">
+                    {{votes}}
+                  </span>
+                </div>
+                <div class="col-md-10">
+                  <h2>{{restaurant.name}}</h2>
+                  {{#each voters}}
+                    <img class="profile-pic" src="{{profile.picture}}" data-toggle="tooltip" data-placement="top" title="{{profile.name}}" />
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+            <div class="list-group-separator"></div>
+          </div>
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
     </div>
     <div class="col-md-4 col-md-offset-1">
       {{> restaurantList}}

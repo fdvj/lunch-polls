@@ -8,7 +8,9 @@
       <div class="list-group">
         <div class="list-group-item">
           <div class="row-action-primary checkbox">
-            <label><input class="restaurant-selected" type="checkbox" value="{{_id}}"></label>
+            {{#if isPollOpen}}
+            <label><input class="restaurant-selected" type="checkbox" value="{{_id}}" {{checked}}></label>
+            {{/if}}
           </div>
           <div class="row-content">
             <h4 class="list-group-item-heading">{{name}}</h4>
