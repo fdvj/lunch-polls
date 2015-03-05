@@ -1,0 +1,4 @@
+google = {
+  clientId: '',
+  secret: ''
+};
