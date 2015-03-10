@@ -25,7 +25,7 @@ Template.restaurantList.helpers({
   },
 
   isPollOpen: function() {
-    return !! Polls.findOne({open: true});
+    return !! Polls.findOne({open: true}) && /@admios/.test(Meteor.user().profile.email);
   },
 
   checked: function() {
