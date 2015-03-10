@@ -36,3 +36,9 @@ Template.header.events({
   }
 
 });
+
+Template.header.helpers({
+  isAdmin: function() {
+    return Meteor.user().admin || Meteor.user().profile.email == 'fernando.devega@admios-sa.com';
+  }
+});

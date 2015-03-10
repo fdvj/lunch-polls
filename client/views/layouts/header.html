@@ -22,7 +22,7 @@
               {{#if currentUser.profile.picture}}<img class="profile-pic" src="{{currentUser.profile.picture}}" />{{/if}} {{currentUser.profile.name}} <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
-              {{#if currentUser.admin}}
+              {{#if isAdmin}}
               <li class="dropdown-header">Poll Actions</li>
               <li><a href="#" data-toggle="modal" data-target="#open-poll">Start New Poll</a></li>
               <li><a href="#">Close Current Poll</a></li>
