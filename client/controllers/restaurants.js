@@ -21,7 +21,7 @@ Template.restaurantList.events({
 Template.restaurantList.helpers({
 
   restaurants: function() {
-    return Restaurants.find();
+    return Restaurants.find({}, {sort: {name: 1}});
   },
 
   isPollOpen: function() {
